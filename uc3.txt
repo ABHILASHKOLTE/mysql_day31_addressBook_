@@ -1,0 +1,92 @@
+mysql> #-----UC 3 - INSERT CONTACTS IN ADDRESS BOOK TABLE ---
+
+
+mysql> insert into addressbook values
+    -> ('1','Hari','Om','Bharat Nagar','Kolhapur','Maharashtra','411209','9008776655','hariom@gmail.com');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from addressbook
+    -> ^C
+mysql> select * from addressbook;
++----+-----------+----------+--------------+----------+-------------+--------+------------+------------------+
+| id | FirstName | LastName | Address      | City     | State       | Zip    | Phone      | Email            |
++----+-----------+----------+--------------+----------+-------------+--------+------------+------------------+
+|  1 | Hari      | Om       | Bharat Nagar | Kolhapur | Maharashtra | 411209 | 9008776655 | hariom@gmail.com |
++----+-----------+----------+--------------+----------+-------------+--------+------------+------------------+
+1 row in set (0.01 sec)
+
+mysql> delete from addressbook where id =1;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from addressbook;
+Empty set (0.00 sec)
+
+
+
+
+mysql> insert into addressbook values
+    ->  ('2','Gagan','Shahu','Shanti Nagar','Bengaluru','Karnataka','525409','8899887661','gagan@gmail.com');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from addressbook;
++----+-----------+----------+--------------+------------+-----------+--------+------------+-------------------+
+| id | FirstName | LastName | Address      | City       | State     | Zip    | Phone      | Email             |
++----+-----------+----------+--------------+------------+-----------+--------+------------+-------------------+
+|  1 | Haridas   | Sing     | Bharat Nagar | Chadighard | Punjab    | 211209 | 9008776655 | haridas@gmail.com |
+|  2 | Gagan     | Shahu    | Shanti Nagar | Bengaluru  | Karnataka | 525409 | 8899887661 | gagan@gmail.com   |
++----+-----------+----------+--------------+------------+-----------+--------+------------+-------------------+
+2 rows in set (0.00 sec)
+
+
+
+mysql> delete from addressbook  where id=2;
+Query OK, 1 row affected (0.01 sec)
+
+
+mysql> insert into  addressbook values
+    ->  ('2','Gopi','Shahu','Maharaja Nagar','Tumsar','Maharashtra','425409','8999887661','gopi@gmail.com');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into addressbook values
+    ->  ('3','Ramaji','thakare','Shivaji Nagar','Mumbai','Maharashtra','445409','8999687661','ramaji@gmail.com');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select  * from  addressbook;
++----+-----------+----------+----------------+------------+-------------+--------+------------+-------------------+
+| id | FirstName | LastName | Address        | City       | State       | Zip    | Phone      | Email             |
++----+-----------+----------+----------------+------------+-------------+--------+------------+-------------------+
+|  1 | Haridas   | Sing     | Bharat Nagar   | Chadighard | Punjab      | 211209 | 9008776655 | haridas@gmail.com |
+|  2 | Gopi      | Shahu    | Maharaja Nagar | Tumsar     | Maharashtra | 425409 | 8999887661 | gopi@gmail.com    |
+|  3 | Ramaji    | thakare  | Shivaji Nagar  | Mumbai     | Maharashtra | 445409 | 8999687661 | ramaji@gmail.com  |
++----+-----------+----------+----------------+------------+-------------+--------+------------+-------------------+
+3 rows in set (0.00 sec)
+
+mysql> describe addressbook;
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| id        | int unsigned | NO   | PRI | NULL    | auto_increment |
+| FirstName | varchar(50)  | YES  |     | NULL    |                |
+| LastName  | varchar(50)  | YES  |     | NULL    |                |
+| Address   | varchar(150) | YES  |     | NULL    |                |
+| City      | varchar(30)  | YES  |     | NULL    |                |
+| State     | varchar(50)  | YES  |     | NULL    |                |
+| Zip       | varchar(6)   | YES  |     | NULL    |                |
+| Phone     | varchar(12)  | YES  |     | NULL    |                |
+| Email     | varchar(50)  | YES  |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+9 rows in set (0.01 sec)
+
+mysql> select *  from  addressbook;
++----+-----------+----------+----------------+------------+-------------+--------+------------+-------------------+
+| id | FirstName | LastName | Address        | City       | State       | Zip    | Phone      | Email             |
++----+-----------+----------+----------------+------------+-------------+--------+------------+-------------------+
+|  1 | Haridas   | Sing     | Bharat Nagar   | Chadighard | Punjab      | 211209 | 9008776655 | haridas@gmail.com |
+|  2 | Gopi      | Shahu    | Maharaja Nagar | Tumsar     | Maharashtra | 425409 | 8999887661 | gopi@gmail.com    |
+|  3 | Ramaji    | thakare  | Shivaji Nagar  | Mumbai     | Maharashtra | 445409 | 8999687661 | ramaji@gmail.com  |
++----+-----------+----------+----------------+------------+-------------+--------+------------+-------------------+
+3 rows in set (0.00 sec)
+
+
+
+
