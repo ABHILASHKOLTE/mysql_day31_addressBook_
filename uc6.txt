@@ -1,0 +1,19 @@
+mysql> #---UC 6 - RETRIEVE CONTACT USING CITY/STATE -
+
+
+mysql> select * from addressbook where city='Mumbai';
++----+-----------+----------+---------------+--------+-------------+--------+------------+------------------+
+| id | FirstName | LastName | Address       | City   | State       | Zip    | Phone      | Email            |
++----+-----------+----------+---------------+--------+-------------+--------+------------+------------------+
+|  3 | Ramaji    | thakare  | Shivaji Nagar | Mumbai | Maharashtra | 445409 | 8999687661 | ramaji@gmail.com |
++----+-----------+----------+---------------+--------+-------------+--------+------------+------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from addressbook where city='chadighard';
++----+-----------+----------+--------------+------------+--------+--------+------------+-------------------+
+| id | FirstName | LastName | Address      | City       | State  | Zip    | Phone      | Email             |
++----+-----------+----------+--------------+------------+--------+--------+------------+-------------------+
+|  1 | Haridas   | Sing     | Bharat Nagar | Chadighard | Punjab | 211209 | 9008776655 | haridas@gmail.com |
++----+-----------+----------+--------------+------------+--------+--------+------------+-------------------+
+1 row in set (0.00 sec)
+
