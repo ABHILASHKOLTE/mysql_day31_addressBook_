@@ -1,0 +1,65 @@
+mysql> #----UC 9 - IDENTIFY AB WITH NAME & TYPE---
+
+mysql> select * from addressbook;
++----+-----------+----------+---------------+------------+-------------+--------+------------+-------------------------+
+| id | FirstName | LastName | Address       | City       | State       | Zip    | Phone      | Email                   |
++----+-----------+----------+---------------+------------+-------------+--------+------------+-------------------------+
+|  1 | Haridas   | Sing     | Bharat Nagar  | Chadighard | Punjab      | 211209 | 9008776655 | haridas@gmail.com       |
+|  3 | Ramaji    | thakare  | Shivaji Nagar | Mumbai     | Maharashtra | 445409 | 8999687661 | ramaji@gmail.com        |
+|  4 | Akash     | Pillevan | Pauni Village | Bhandara   | Maharashtra | 448409 | 9058745832 | akashpillevan@gmail.com |
++----+-----------+----------+---------------+------------+-------------+--------+------------+-------------------------+
+3 rows in set (0.00 sec)
+
+
+
+mysql>  update addressbook set bookname='MyBook1', booktype='Family';
+Query OK, 3 rows affected (0.01 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql> select * from addressbook;
++----+-----------+----------+---------------+------------+-------------+--------+------------+-------------------------+----------+----------+
+| id | FirstName | LastName | Address       | City       | State       | Zip    | Phone      | Email                   | bookname | booktype |
++----+-----------+----------+---------------+------------+-------------+--------+------------+-------------------------+----------+----------+
+|  1 | Haridas   | Sing     | Bharat Nagar  | Chadighard | Punjab      | 211209 | 9008776655 | haridas@gmail.com       | MyBook1  | Family   |
+|  3 | Ramaji    | thakare  | Shivaji Nagar | Mumbai     | Maharashtra | 445409 | 8999687661 | ramaji@gmail.com        | MyBook1  | Family   |
+|  4 | Akash     | Pillevan | Pauni Village | Bhandara   | Maharashtra | 448409 | 9058745832 | akashpillevan@gmail.com | MyBook1  | Family   |
++----+-----------+----------+---------------+------------+-------------+--------+------------+-------------------------+----------+----------+
+3 rows in set (0.00 sec)
+
+mysql> insert into addressbook values('2','Suresh','Kumar','Mohan Nagar','Nashik','Maharashtra','425409','9996248999','suresh@gmail.com','MyBook1','Profession');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from addressbook;
++----+-----------+----------+---------------+------------+-------------+--------+------------+-------------------------+----------+------------+
+| id | FirstName | LastName | Address       | City       | State       | Zip    | Phone      | Email                   | bookname | booktype   |
++----+-----------+----------+---------------+------------+-------------+--------+------------+-------------------------+----------+------------+
+|  1 | Haridas   | Sing     | Bharat Nagar  | Chadighard | Punjab      | 211209 | 9008776655 | haridas@gmail.com       | MyBook1  | Family     |
+|  2 | Suresh    | Kumar    | Mohan Nagar   | Nashik     | Maharashtra | 425409 | 9996248999 | suresh@gmail.com        | MyBook1  | Profession |
+|  3 | Ramaji    | thakare  | Shivaji Nagar | Mumbai     | Maharashtra | 445409 | 8999687661 | ramaji@gmail.com        | MyBook1  | Family     |
+|  4 | Akash     | Pillevan | Pauni Village | Bhandara   | Maharashtra | 448409 | 9058745832 | akashpillevan@gmail.com | MyBook1  | Family     |
++----+-----------+----------+---------------+------------+-------------+--------+------------+-------------------------+----------+------------+
+4 rows in set (0.01 sec)
+
+mysql> select booktype,count(*) from addressbook group by booktype;
++------------+----------+
+| booktype   | count(*) |
++------------+----------+
+| Family     |        3 |
+| Profession |        1 |
++------------+----------+
+2 rows in set (0.01 sec)
+
+mysql> insert into addressbook values('5','Abhijeet','Borkar','pawan Nagar','Saoner','Maharashtra','445409','3488776655','abhijeet@gmail.com','MyBook2','Friends');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select booktype,count(*) from addressbook group by booktype;
++------------+----------+
+| booktype   | count(*) |
++------------+----------+
+| Family     |        3 |
+| Profession |        1 |
+| Friends    |        1 |
++------------+----------+
+3 rows in set (0.00 sec)
+
+mysql>
